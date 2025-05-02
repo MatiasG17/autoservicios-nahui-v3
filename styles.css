@@ -1,0 +1,463 @@
+/* --------------------- RESET BÁSICO --------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Encabezado con logo y redes sociales */
+header {
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    text-decoration: none;
+  }  
+
+.social-icons a:hover {
+    color: #ffcc00; /* Amarillo dorado */
+}
+
+/* --------------------- NAVEGACIÓN --------------------- */
+nav {
+    background-color: #ff6600; /* Naranja */
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: #fff;
+    border-bottom: 2px solid white;
+}
+
+/* Imagen tipo carrusel como fondo de sección */
+.imagen-taller {
+    height: 100vh;
+    background-image: url('Imágenes/Fondo1.png');
+    background-size: 90%; /* Reduce un poco la imagen */
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: background-image 0.5s ease-in-out;
+}
+
+
+/* Flechas de navegación */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-button.left {
+    left: 20px;
+}
+
+.nav-button.right {
+    right: 20px;
+}
+
+
+/* Sección de bienvenida principal */
+.hero {
+    background-image: url('hero-negocio.jpg'); /* Asegúrate de tener esta imagen */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6); /* capa oscura */
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #cc0000;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #990000;
+    transform: scale(1.05);
+}
+
+
+/* -------------------- SECCIONES GENERALES -------------------- */
+section {
+    padding: 60px 40px;
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    font-size: 2em;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --------------------- SERVICIOS --------------------- */
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #e6e6e6;
+    width: 250px;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: #cc0000;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #333;
+}
+
+/* -------------------- SERVICIO SELECCIONADO -------------------- */
+.servicio-seleccionado {
+    background-color: white;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .servicio-seleccionado h2 {
+    color: #003366; /* Mismo azul de otros títulos */
+    margin-bottom: 20px;
+  }
+  
+  /* Subtítulo del servicio seleccionado */
+.subtitulo-servicio {
+    font-weight: bold;         
+    color: black;              
+    font-size: 1.2rem;         
+    text-align: center;
+    margin-bottom: 10px;       
+    margin-top: 10px;          
+  }
+  
+  .imagen-servicio {
+    width: 500px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-limpiar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-limpiar:hover {
+    background-color: #e65c00;
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+  /* ==== DETALLE DE SERVICIO SELECCIONADO ==== */
+.servicio-detalle {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  #servicio-titulo {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .imagen-servicio {
+    width: 500px;        
+    max-width: 90%;      
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  
+/* --------------------- GALERÍA --------------------- */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* -------------------- POR QUÉ ELEGIRNOS -------------------- */
+.why-us .benefits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.benefit-item {
+    background-color: #ffe680; /* Amarillo claro */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: bold;
+    color: #003366;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* --------------------- CONTÁCTANOS --------------------- */
+.contact-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+}
+
+.contact-info a {
+    color: #0c75e2;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* --------------------- FOOTER --------------------- */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+footer .logo-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    height: 40px;
+}
+
+footer .social-footer {
+    margin-top: 15px;
+}
+
+footer .social-footer a {
+    color: white;
+    margin-left: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+footer .social-footer a:hover {
+    color: #ffcc00;
+}
+
+/* -------------------- BOTÓN FLOTANTE WHATSAPP -------------------- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 26px;
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5d;
+}
+
+/* --------------------- RESPONSIVE --------------------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .service-cards,
+    .why-us .benefits,
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .benefit-item {
+        width: 90%;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        max-width: 90vw;
+    }
+
+    footer {
+        padding-bottom: 80px;
+    }
+
+    footer .logo-footer {
+        position: static;
+        margin-top: 20px;
+    }
+
+    footer .social-footer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
